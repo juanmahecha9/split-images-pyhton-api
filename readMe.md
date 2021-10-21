@@ -12,7 +12,7 @@ En esta aplicacion se puede hacer un slipt de imagenes en fragmentos de nxn dond
 
 la respuesta de esta es un arreglo de objetos en formato json que continen la imagen en su represnetacion de base64 la cual puede ser interpretada en html
 
-URL DEL DEPLY: https://tranquil-taiga-42967.herokuapp.com/
+URL DEL DEPLOY: https://tranquil-taiga-42967.herokuapp.com/
 
 {
     "Created by": "Juanmahecha9",
