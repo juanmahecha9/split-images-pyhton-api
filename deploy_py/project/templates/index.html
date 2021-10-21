@@ -11,14 +11,26 @@
 </head>
 
 <body>
-   
+
     <div class="container">
         <h1 class="text-center text-danger">Rutas de la api</h1>
         <hr>
         <ol type="A">
             <li>main route: <b><span id="url"></span></b></li>
-            <li>split images - methods = POST: <b><span id="url1"></span>api/slicer/image</b></li>
-            <li>split image folder - methods = GET: <b><span id="url2"></span>api/captcha-split-images/number/number</b></li>
+            <li>
+                split images - methods = POST: <b><span id="url1"></span>api/slicer/image</b> 
+                <br>
+                Structure of body: 
+                <pre>
+                    {
+                        "row": value,
+                        "col": value,
+                        "url": "https://i.pinimg.com/originals/4c/6b/60/4c6b6097a34f2ba66c4fef09dd2366ef.jpg"
+                    }
+                </pre>
+             </li>
+            <li>split image folder - methods = GET: <b><span id="url2"></span>api/split-images/number/number</b>
+            </li>
         </ol>
     </div>
     <div class="container">

@@ -45,7 +45,7 @@ def create_user():
     return jsonify(images)
 
 
-@app.route('/api/captcha-split-images/<row>/<col>', methods=['GET'])
+@app.route('/api/split-images/<row>/<col>', methods=['GET'])
 def home(row=None, col=None):
     images_array = ['1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg', '5.jpeg']
     images = imgcrop(
