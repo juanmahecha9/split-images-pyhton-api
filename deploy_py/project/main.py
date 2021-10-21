@@ -1,6 +1,6 @@
 import os
 import time
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from function import imgcrop
 from config import config
 import requests
@@ -22,14 +22,7 @@ def after_request(response):
 
 @app.route('/', methods=['GET'])
 def index():
-    return jsonify({
-        "Created by": "Juanmahecha9",
-        "routes": {
-            "main route - methods = GET": "/",
-            "split images - methods = POST": "/api/slicer/image",
-            "Split image folder - methods = GET":  "/api/captcha-split-images/<row>/<col>"
-        }
-    })
+    return render_template('index.html')
 
 data = {}
 
@@ -46,7 +39,7 @@ def create_user():
     with open('url_file.jpg', 'wb') as file:
         file.write(requests.get(data["url"]).content)
     time.sleep(0.01)
-    images = imgcrop("./url_file.jpg", data["row"], data["col"])
+    images = imgcrop("./url_file.jpg", int(data["row"]), int(data["col"]))
     time.sleep(.01)
     remove("url_file.jpg")
     return jsonify(images)
