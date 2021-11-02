@@ -1,14 +1,19 @@
 #!/bin/bash
 
-function main(){
-    cd ..
-    echo "Ingresa el commit a anexar en el repositrio"
-    read gitCommit
-    echo "Init a new commit"
-    git add . 
-    git commit -m $gitCommit 
-    git push origin master 
-}
 
-main
+    cd ..
+    git status
+    sleep 1
+    git add .
+    echo "New Commit message: "
+    read gitCommitMessage
+    git status
+    git commit -m $gitCommitMessage
+    git push origin master
+
+
+
+
+
+
  
