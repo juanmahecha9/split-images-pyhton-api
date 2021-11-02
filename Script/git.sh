@@ -1,7 +1,6 @@
 #!/bin/bash
 
-
-    cd ..
+    echo "Subiendo cambios en el repositorio"
     git status
     sleep 1
     git add .
