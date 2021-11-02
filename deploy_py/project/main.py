@@ -1,14 +1,13 @@
 import os
 import time
 from flask import Flask, jsonify, request, render_template
-from function import imgcrop
+from functions.crop import imgcrop
 from config import config
 import requests
 from os import remove
 import random
 
 app = Flask(__name__)
-
 
 @app.after_request
 def after_request(response):
@@ -25,8 +24,6 @@ def index():
     return render_template('index.html')
 
 data = {}
-
-
 @app.route('/api/slicer/image', methods=['POST'])
 def create_user():
     data = request.get_json()
@@ -46,12 +43,16 @@ def create_user():
 
 
 @app.route('/api/split-images/<row>/<col>', methods=['GET'])
-def home(row=None, col=None):
+def crop(row=None, col=None):
     images_array = ['1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg', '5.jpeg']
     images = imgcrop(
         "./images/"+images_array[random.randint(0, 4)], int(row), int(col))
     return jsonify(images)
 
+@app.route('/api/image/load/file', methods=['POST'])
+def loadFile():
+
+    return
 
 if __name__ == '__main__':
     app.config.from_object(config['development'])
