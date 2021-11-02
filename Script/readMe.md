@@ -8,3 +8,4 @@ Estado del GIT
 
 ## Ejecutar proyecto
 Ejecucion del proyecto
+`sh run.sh`
